@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+motor
+pydantic[email]
+PyJWT
+passlib[bcrypt]
+langchain
+langchain-google-genai
+langchain-community
+pypdf
+python-multipart
+cors

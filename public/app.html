@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chat - Document Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>📚 RAG Chat</h1>
+                <p class="subtitle">Document Intelligence</p>
+            </div>
+
+            <!-- PDF Upload Section -->
+            <div class="upload-section">
+                <h3>Upload Document</h3>
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                    </svg>
+                    <p class="upload-text">Drop PDF here or click to browse</p>
+                    <input type="file" id="pdfInput" accept=".pdf" hidden>
+                </div>
+                <div id="uploadStatus" class="upload-status"></div>
+            </div>
+
+            <!-- System Prompt Section -->
+            <div class="prompt-section">
+                <h3>System Prompt</h3>
+                <select id="promptPreset" class="preset-select">
+                    <option value="default">General Assistant</option>
+                    <option value="customerSupport">Customer Support</option>
+                    <option value="hr">HR Assistant</option>
+                    <option value="legal">Legal Research</option>
+                    <option value="technical">Technical Docs</option>
+                    <option value="medical">Medical Info</option>
+                    <option value="sales">Sales Enablement</option>
+                    <option value="training">Training & Onboarding</option>
+                    <option value="compliance">Compliance & Audit</option>
+                    <option value="custom">Custom Prompt</option>
+                </select>
+
+                <div id="customPromptContainer" class="custom-prompt-container" style="display: none;">
+                    <textarea id="customPrompt" class="custom-prompt"
+                        placeholder="Enter your custom system prompt..."></textarea>
+                    <button id="savePrompt" class="btn-save">Save Prompt</button>
+                </div>
+
+                <div class="prompt-preview">
+                    <p class="preview-label">Current Prompt:</p>
+                    <p id="promptPreview" class="preview-text">Loading...</p>
+                </div>
+            </div>
+
+            <!-- User Profile & Usage -->
+            <div class="user-profile">
+                <div class="user-info">
+                    <span id="usernameDisplay" class="username">User</span>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+                <div class="usage-stats">
+                    <div class="usage-item">
+                        <span class="usage-label">Messages</span>
+                        <span id="msgCount" class="usage-value">0</span>
+                    </div>
+                    <div class="usage-item">
+                        <span class="usage-label">Tokens</span>
+                        <span id="tokenCount" class="usage-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span id="systemStatus" class="info-value">Ready</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Document:</span>
+                    <span id="documentName" class="info-value">None</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div class="chat-header">
+                <h2>Chat with Your Document</h2>
+                <p class="chat-subtitle">Ask questions and get intelligent answers</p>
+            </div>
+
+            <div class="messages" id="messages">
+                <div class="welcome-message">
+                    <h3>👋 Welcome to RAG Chat!</h3>
+                    <p>Upload a PDF document to get started. Once uploaded, you can ask any questions about the content.
+                    </p>
+                    <ul class="features-list">
+                        <li>🔍 Intelligent document search</li>
+                        <li>💬 Context-aware responses</li>
+                        <li>🎯 Customizable AI personas</li>
+                        <li>⚡ Fast and accurate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-container">
+                    <textarea id="messageInput" class="message-input"
+                        placeholder="Ask a question about your document..." rows="1" disabled></textarea>
+                    <button id="sendButton" class="send-button" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

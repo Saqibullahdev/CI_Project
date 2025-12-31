@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Intelligence - Document Insight Redefined</title>
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">📚 RAG Intelligence</div>
+        <div class="nav-links">
+            <a href="auth.html" class="nav-link">Login</a>
+            <a href="auth.html?mode=register" class="btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <span class="badge">Next Generation document AI</span>
+            <h1>Unlock the Intelligence in Your <span class="gradient-text">PDFs</span></h1>
+            <p>Upload documents and chat with them using our advanced RAG technology. Professional-grade insights, instant answers, and permanent memory.</p>
+            
+            <div class="cta-group">
+                <a href="auth.html?mode=register" class="btn-primary btn-lg">Start Free Trial</a>
+                <a href="#features" class="btn-secondary btn-lg">Watch Demo</a>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Secure MongoDB</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">Ultra</span>
+                    <span class="stat-label">Fast Retrieval</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">AI</span>
+                    <span class="stat-label">Gemini Powered</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="glass-mockup">
+                <div class="mockup-header">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                </div>
+                <div class="mockup-body">
+                    <div class="chat-bubble left">Analyze the compliance report?</div>
+                    <div class="chat-bubble right pulse">Scanning document... Found 3 critical findings in section 4.2.</div>
+                    <div class="loading-bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>The Future of Documentation</h2>
+            <p>Everything you need to master your data</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🔄</div>
+                <h3>Permanent Memory</h3>
+                <p>Never lose a conversation. Our MongoDB integration preserves every insight for future recall.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Usage Tracking</h3>
+                <p>Monitor your token consumption and chat statistics with enterprise-grade precision.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🛡️</div>
+                <h3>Secure Auth</h3>
+                <p>JWT-based authentication ensures your documents and chats remain strictly confidential.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 RAG Intelligence. Powered by Advanced Agentic Coding.</p>
+    </footer>
+
+    <script>
+        // Simple check if already logged in
+        if (localStorage.getItem('token')) {
+            window.location.href = 'app.html';
+        }
+    </script>
+</body>
+</html>
